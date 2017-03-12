@@ -1,0 +1,25 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is the longest word in the English language dictionary.
+
+1.  getrusage() returns resource usage measures for RUSAGE_SELF (for the calling process in general), RUSAGE_CHILDREN (for all children, grandchildren etc. of the calling process) and RUSAGE_THREAD (for the calling thread). The resource usages are returned in the structure which consists of many fields.
+
+2.  A variable of type struct rusage has 16 members:
+ru_utime, ru_stime, ru_maxrss, ru_ixrss,
+ru_idrss, ru_isrss, ru_minflt, ru_majflt,
+ru_nswap, ru_inblock, ru_oublock, ru_msgsnd,
+ru_msgrcv, ru_nsignals, ru_nvcsw, ru_nivcsw.
+
+3.  Because "before" and "after" are pointers of type "struct rusage", the pointers are call by address. They return resource usage statistics before and after calling the process respectively.
+
+4.  First we read the first character from text file. If that character is a letter then we add this character to the word. If it is not a letter we check if it is an apostrophe symbol and index is > 0 (index = 0 only if we begin a new word, index is a number of a character in a word). Then we check if the number of symbols in the word is less than 46 (because the length of the longest word in the given dictionary is 45).  After that we check if the word contains digits. If not, we check if index > 0. If true, we found a new word.
+
+5.  We don't use fscanf because fscanf doesn't read the newline symbol '\n'.
+
+6.  We declared the parameters for check and load as const because we want to guarantee that the values of the parameters can not change. Besides, we want to safe the user from changing the values of the parameters.
+
+7.  I used tries. Every node is a struct that consists of a boolean-valued member "is_word" and of array of 27 pointers called "children" to a struct defined as "struct node". At first, "is_word" is initialized as false, and all the pointers are NULL. The traversing to a new node means the transfer from the previous letter in the word to the next letter. After all the characters of the word are read, we read a '\n' character and in such a way a boolean-valued value of "is_word" becomes true. So is_word = 0 iff the character is the end of a word.
+
+8.  The first time I got the code working correctly the total time was 0,22.
+
+9.  To improve the performance of the code I used valgrind to avoid memory leaks and had to change the "unload" function.
+
+10. At first it seemed to me that using the tries is the most efficient way to write the code that would be fastest. I spent a lot of time to make the program work correctly and avoid leaks but now I understand that there are more fastest ways and my methods are not optimized in time. Maybe using linked lists or hashtables would be more efficient.

@@ -1,0 +1,10 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+1. From 3 to 9 inclusive
+2. Linear search
+3. greet()
+4. init(), draw(), move(), won()
+

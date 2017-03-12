@@ -1,0 +1,31 @@
+0.  BMP - up to more than 4 billion colors, JPEG - 16.7 million, PNG - 16.7 million,
+ GIF - up to 256.
+1.  GIF
+2.  Lossy compression results are loss of data and quality, loseless compression reduces
+ a file size with no loss of quality. 
+3.  JPEG
+4.  When a file is deleted on a FAT file system the operating system modifies the 
+ filename's firs character in the file's directory entry and moves all of the file's
+ FAT clusters to the hard drive's list of free clusters. The actual file data are never touched.
+5.  According to Gutmann, overwriting user data with one or two passes of random data
+ makes the overwritten information irrecoverable.
+6.  stdint.h is a header file of the standard C library which declares some integer types of data, 
+these types of data are very fast to use.
+7.  uint8_t - for unsigned 8-bit integers, uint32_t - for unsigned 16-bit integers,
+int32_t - for signed 32-bit integers, uint16_t - for unsigned 16-bit integers.
+8.  BYTE is 1 byte, DWORD is 4 bytes, LONG is 4 bytes, WORD is 2 bytes.
+9.  ASCII.
+10. bfSize is the size, in bytes, of the bitmap file. biSize is the number of bytes required
+by the structure.
+11. If biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corner. 
+12. biBitCount.
+13. fopen might return NULL if it couldn't find the file by the path it was input as the first 
+argument of the command "make copy".
+14. It means that we read only 1 element at a time.
+15. bi.biWidth = 3, sizeof(RGBTRIPLE) = 3;
+    3 * 3 =9,  9 % 4 = 1,   4 - 1 = 3,   3 % 4 = 3. Thus, padding = 3.
+16. fseek moves the file pointer to a given position in the file.
+17. SEEK_CUR is a constant in stdio.h, used in fseek() function as the third argument.
+If we use SEEK_CUR it means that we move the file pointer to the current position in the file 
+(from which the last input or output operation was done).
+18. Whodunit?
